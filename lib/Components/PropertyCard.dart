@@ -52,7 +52,7 @@ class PropertyCard extends StatelessWidget {
             children: [
               Row(children: [
                 SvgPicture.asset(
-                  "assets/Icons/star.svg",
+                  "assets/icons/star.svg",
                   height: 20,
                 ),
                 SizedBox(
@@ -118,7 +118,7 @@ class PropertyCard extends StatelessWidget {
               ),
               Row(
                 children: [
-                  SvgPicture.asset("assets/Icons/home-hashtag.svg"),
+                  SvgPicture.asset("assets/icons/home-hashtag.svg"),
                   SizedBox(
                     width: 6,
                   ),
@@ -135,7 +135,7 @@ class PropertyCard extends StatelessWidget {
                   SizedBox(
                     width: 12,
                   ),
-                  SvgPicture.asset("assets/Icons/home-hashtag.svg"),
+                  SvgPicture.asset("assets/icons/home-hashtag.svg"),
                   SizedBox(
                     width: 6,
                   ),
@@ -176,7 +176,7 @@ class PropertyCard extends StatelessWidget {
                               ))
                         ]),
                   ),
-                  SvgPicture.asset("assets/Icons/heart.svg"),
+                  SvgPicture.asset("assets/icons/heart.svg"),
                 ],
               ),
             ],

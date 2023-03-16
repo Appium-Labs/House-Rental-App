@@ -30,7 +30,7 @@ class HomeScreenUpperContainer extends StatelessWidget {
           ),
           Row(
             children: [
-              SvgPicture.asset("assets/Icons/location.svg"),
+              SvgPicture.asset("assets/icons/location.svg"),
               SizedBox(
                 width: 8,
               ),
@@ -64,12 +64,12 @@ class HomeScreenUpperContainer extends StatelessWidget {
                 suffixIcon: Padding(
                   padding: EdgeInsets.all(padding_xs),
                   child: SvgPicture.asset(
-                    "assets/Icons/setting-5.svg",
+                    "assets/icons/setting-5.svg",
                   ),
                 ),
                 prefixIcon: Padding(
                   padding: EdgeInsets.all(padding_xs),
-                  child: SvgPicture.asset("assets/Icons/search-normal.svg"),
+                  child: SvgPicture.asset("assets/icons/search-normal.svg"),
                 ),
                 filled: true,
                 fillColor: grey_bg_color,

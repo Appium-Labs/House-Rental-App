@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:house_rental_app/Feature-HomePage/Views/MainScreen.dart';
+import 'package:get/route_manager.dart';
+import 'package:house_rental_app/Authentication-Service/Views/WelcomeScreen.dart';
 
 import 'Constants.dart';
 
@@ -13,10 +16,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(),
-      home: SafeArea(child: const MainScreen()),
+      home: SafeArea(child: const WelcomeScreen()),
     );
   }
 }

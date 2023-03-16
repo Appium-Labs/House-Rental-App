@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 
 //----------------------------------COLORS/GRADIENT--------------------------------------------//
+
 Gradient buttonLinearGradient = const LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment(0.701, 0.714),
   colors: [Color(0xff917AFD), Color(0xff6246EA)],
 );
+
+LinearGradient primaryGradient =
+    const LinearGradient(colors: [secondaryblue, primaryBlue]);
+
 final Shader textLinearGradient = LinearGradient(
   colors: <Color>[Color(0xff917AFD), Color(0xff6246EA)],
 ).createShader(Rect.fromLTWH(0.0, 0.0, 0.701, 0.714));
@@ -13,7 +18,7 @@ final Shader textLinearGradient = LinearGradient(
 
 double font_xs = 12;
 double font_s = 14;
-double font_m = 16;
+double font_m = 16.0;
 double font_xm = 18;
 double font_xxm = 20;
 double font_l = 22;
@@ -42,3 +47,5 @@ const Color grey_bg_color = Color(0xffF2F2F3);
 const Color grey_border_color = Color(0xffE3E3E7);
 const Color app_bg_color = Color(0xffE5E5E5);
 const Color box_shadow_color = Color(0xff43434300);
+const primaryBlue = Color(0xff6246EA);
+const secondaryblue = Color(0xff937CFF);
