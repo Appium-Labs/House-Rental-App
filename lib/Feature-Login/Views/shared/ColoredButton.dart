@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:house_rental_app/Constants.dart';
 
 class ColoredButton extends StatelessWidget {
   final String text;
@@ -19,11 +20,13 @@ class ColoredButton extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
           color: color,
-          gradient: const LinearGradient(
-              colors: [Color(0xff937CFF), Color(0xff6246EA)]),
+          gradient: primaryGradient,
           borderRadius: BorderRadius.circular(50),
           boxShadow: [
-            BoxShadow(color: color, offset: const Offset(0, 2), blurRadius: 10)
+            BoxShadow(
+                color: color.withOpacity(0.5),
+                offset: const Offset(0, 5),
+                blurRadius: 25)
           ]),
       child: Text(
         text,

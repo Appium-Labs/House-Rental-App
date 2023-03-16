@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
+import 'package:house_rental_app/Feature-Login/Views/LoginScreen.dart';
+import 'package:house_rental_app/Feature-Login/Views/SignUpScreen.dart';
 import 'package:house_rental_app/Feature-Login/Views/shared/ColoredButton.dart';
 import 'package:house_rental_app/Feature-Login/Views/shared/TransparentButton.dart';
 
@@ -54,6 +57,7 @@ class WelcomeScreen extends StatelessWidget {
               height: 10,
             ),
             GestureDetector(
+              onTap: () => Get.to(LoginScreen()),
               child: const ColoredButton(
                 text: "Login",
                 color: (Color(0xff6246EA)),
@@ -61,6 +65,7 @@ class WelcomeScreen extends StatelessWidget {
               ),
             ),
             GestureDetector(
+              onTap: () => Get.to(SignUpScreen()),
               child: const TransparentButton(
                 text: "Sign-up",
                 color: Colors.white,
