@@ -16,7 +16,7 @@ class GoogleButton extends StatelessWidget {
         child: IntrinsicHeight(
           child: Stack(
             children: [
-              const Align(
+              Align(
                   child: Text(
                 'Sign-In with Google',
                 style: TextStyle(fontSize: font_m, fontWeight: FontWeight.w500),

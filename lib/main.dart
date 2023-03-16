@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:house_rental_app/Feature-HomePage/Views/MainScreen.dart';
 import 'package:get/route_manager.dart';
 import 'package:house_rental_app/Authentication-Service/Views/WelcomeScreen.dart';
 
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(),
-      home: WelcomeScreen(),
+      home: SafeArea(child: const WelcomeScreen()),
     );
   }
 }
