@@ -19,7 +19,6 @@ class ColoredButton extends StatelessWidget {
       height: 60,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-          color: color,
           gradient: primaryGradient,
           borderRadius: BorderRadius.circular(50),
           boxShadow: [
@@ -31,7 +30,7 @@ class ColoredButton extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-            color: textColor, fontSize: 16, fontWeight: FontWeight.w600),
+            color: textColor, fontSize: font_m, fontWeight: FontWeight.w600),
       ),
     );
   }

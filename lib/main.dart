@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:house_rental_app/Feature-Login/Views/WelcomeScreen.dart';
+import 'package:house_rental_app/Authentication-Service/Views/WelcomeScreen.dart';
 
 import 'Constants.dart';
 

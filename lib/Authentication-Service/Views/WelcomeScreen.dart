@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:house_rental_app/Feature-Login/Views/LoginScreen.dart';
-import 'package:house_rental_app/Feature-Login/Views/SignUpScreen.dart';
-import 'package:house_rental_app/Feature-Login/Views/shared/ColoredButton.dart';
-import 'package:house_rental_app/Feature-Login/Views/shared/TransparentButton.dart';
+import 'package:house_rental_app/Authentication-Service/Views/LoginScreen.dart';
+import 'package:house_rental_app/Authentication-Service/Views/SignUpScreen.dart';
+import 'package:house_rental_app/Authentication-Service/Views/shared/ColoredButton.dart';
+import 'package:house_rental_app/Authentication-Service/Views/shared/TransparentButton.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
