@@ -10,6 +10,7 @@ import 'package:house_rental_app/Feature-HomePage/Views/Components/DetailsScreen
 import 'package:house_rental_app/Feature-HomePage/Views/Components/DetailsScreenUpper.dart';
 
 import 'Components/DetailsScreenAboutProperty.dart';
+import 'Components/DetailsScreenBottomBar.dart';
 
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({super.key});
@@ -97,6 +98,10 @@ class DetailsScreen extends StatelessWidget {
                         DetailsScreenOwnerDetails(),
                         DetailsScreenAboutProperty(),
                         DetailsScreenReviews(),
+                        DetailsScreenBottomBar(),
+                        SizedBox(
+                          height: 50,
+                        ),
                       ],
                     ),
                   ),

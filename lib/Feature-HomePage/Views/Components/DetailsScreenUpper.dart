@@ -58,7 +58,10 @@ class DetailScreenUpper extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    SvgPicture.asset("assets/icons/star.svg"),
+                    SvgPicture.asset(
+                      "assets/icons/star.svg",
+                      height: 20,
+                    ),
                     RichText(
                       text: TextSpan(
                           text: "4.3",
@@ -84,7 +87,10 @@ class DetailScreenUpper extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    SvgPicture.asset("assets/icons/star.svg"),
+                    SvgPicture.asset(
+                      "assets/icons/star.svg",
+                      height: 20,
+                    ),
                     SizedBox(
                       width: 6,
                     ),
@@ -102,7 +108,10 @@ class DetailScreenUpper extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    SvgPicture.asset("assets/icons/locationGrey.svg"),
+                    SvgPicture.asset(
+                      "assets/icons/locationGrey.svg",
+                      height: 20,
+                    ),
                     SizedBox(
                       width: 6,
                     ),
@@ -120,7 +129,10 @@ class DetailScreenUpper extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    SvgPicture.asset("assets/icons/home-hashtag.svg"),
+                    SvgPicture.asset(
+                      "assets/icons/home-hashtag.svg",
+                      height: 20,
+                    ),
                     SizedBox(
                       width: 6,
                     ),
