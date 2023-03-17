@@ -1,10 +1,12 @@
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:house_rental_app/Components/PropertyCard.dart';
 import 'package:house_rental_app/Constants.dart';
 
-class HomeScreenLowerContainer extends StatelessWidget {
-  const HomeScreenLowerContainer({super.key});
+import '../../../Components/PropertyCard.dart';
+
+class HomeScreenLowerBottomContainer extends StatelessWidget {
+  const HomeScreenLowerBottomContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,35 +21,17 @@ class HomeScreenLowerContainer extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                 horizontal: padding_m,
               ),
-              child: Text(
-                "Near your location",
-                style: TextStyle(
-                  color: foundation_dark,
-                  fontWeight: FontWeight.w600,
-                  fontFamily: 'SF Pro Display',
-                  fontStyle: FontStyle.normal,
-                  fontSize: font_xm,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 4,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: padding_m,
-              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "243 properties in Surabaya",
+                    "Top rated in Surabaya",
                     style: TextStyle(
-                      color: grey_text_color,
-                      fontWeight: FontWeight.w400,
+                      color: foundation_dark,
+                      fontWeight: FontWeight.w600,
                       fontFamily: 'SF Pro Display',
                       fontStyle: FontStyle.normal,
-                      fontSize: font_xs,
+                      fontSize: font_xm,
                     ),
                   ),
                   Text(
@@ -83,5 +67,6 @@ class HomeScreenLowerContainer extends StatelessWidget {
         ),
       ),
     );
+    ;
   }
 }

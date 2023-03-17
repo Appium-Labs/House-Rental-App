@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:house_rental_app/Feature-HomePage/Views/MainScreen.dart';
+import 'package:house_rental_app/Feature-HomePage/Views/HomeScreen.dart';
 import 'package:get/route_manager.dart';
 import 'package:house_rental_app/Authentication-Service/Views/WelcomeScreen.dart';
+import 'package:house_rental_app/Feature-HomePage/Views/MainScreen.dart';
 
 import 'Constants.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(),
-      home: SafeArea(child: const WelcomeScreen()),
+      home: SafeArea(child: const MainScreen()),
     );
   }
 }
