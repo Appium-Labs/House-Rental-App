@@ -39,7 +39,7 @@ class HomeScreenMiddleContainer extends StatelessWidget {
                   borderRadius: BorderRadius.circular(75),
                   border: Border.all(color: grey_border_color, width: 0.8)),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Hero(
                     tag: "x",
@@ -49,6 +49,8 @@ class HomeScreenMiddleContainer extends StatelessWidget {
                           homePageController.toggleState();
                       },
                       child: Container(
+                          alignment: Alignment.center,
+                          width: MediaQuery.of(context).size.width * 0.4,
                           decoration: BoxDecoration(
                               gradient:
                                   homePageController.homePageState.value ==
@@ -59,8 +61,7 @@ class HomeScreenMiddleContainer extends StatelessWidget {
                                           Colors.transparent
                                         ]),
                               borderRadius: BorderRadius.circular(75)),
-                          padding: EdgeInsets.symmetric(
-                              horizontal: padding_4xl, vertical: padding_xs),
+                          padding: EdgeInsets.symmetric(vertical: padding_xs),
                           child: Text(
                             "I need to rent",
                             style: TextStyle(
@@ -75,6 +76,7 @@ class HomeScreenMiddleContainer extends StatelessWidget {
                           )),
                     ),
                   ),
+                  Spacer(),
                   Hero(
                     tag: "x",
                     child: InkWell(
@@ -83,6 +85,8 @@ class HomeScreenMiddleContainer extends StatelessWidget {
                           homePageController.toggleState();
                       },
                       child: Container(
+                          alignment: Alignment.center,
+                          width: MediaQuery.of(context).size.width * 0.4,
                           decoration: BoxDecoration(
                               gradient:
                                   homePageController.homePageState.value ==
@@ -93,8 +97,7 @@ class HomeScreenMiddleContainer extends StatelessWidget {
                                           Colors.transparent
                                         ]),
                               borderRadius: BorderRadius.circular(75)),
-                          padding: EdgeInsets.symmetric(
-                              horizontal: padding_4xl, vertical: padding_xs),
+                          padding: EdgeInsets.symmetric(vertical: padding_xs),
                           child: Text(
                             "I need to buy",
                             style: TextStyle(

@@ -15,7 +15,6 @@ class PropertyCard extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 10),
-      height: screenHeight / 4.3,
       width: screenWidth / 1.2,
       decoration: BoxDecoration(
         color: Colors.white,
