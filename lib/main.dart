@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:house_rental_app/Feature-HomePage/Views/HomeScreen.dart';
 import 'package:get/route_manager.dart';
 import 'package:house_rental_app/Authentication-Service/Views/WelcomeScreen.dart';
-import 'package:house_rental_app/Feature-HomePage/Views/MainScreen.dart';
+import 'package:house_rental_app/MainScreen.dart';
 
 import 'Constants.dart';
 

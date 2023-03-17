@@ -37,15 +37,6 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class Profile extends StatelessWidget {
-  const Profile({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Text("Profile");
-  }
-}
-
 class Request extends StatelessWidget {
   const Request({super.key});
 
