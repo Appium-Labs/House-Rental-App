@@ -67,16 +67,24 @@ class HomeScreenLowerContainer extends StatelessWidget {
             height: 20,
           ),
           Container(
-            height: MediaQuery.of(context).size.height / 4,
+            height: MediaQuery.of(context).size.height / 3,
             child: ListView.builder(
                 physics: const AlwaysScrollableScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 itemCount: 50,
                 itemBuilder: (ctx, idx) {
                   return Container(
+                    padding: EdgeInsets.only(
+                      top: 20,
+                      bottom: 50,
+                    ),
                     child: PropertyCard(),
                   );
                 }),
+          ),
+          Container(
+            height: 200,
+            color: Colors.red,
           )
         ],
       ),
