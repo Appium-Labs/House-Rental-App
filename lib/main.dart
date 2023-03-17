@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(),
-      home: SafeArea(child: const MainScreen()),
+      home: const MainScreen(),
     );
   }
 }

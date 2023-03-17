@@ -43,143 +43,145 @@ class PropertyCard extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          padding: EdgeInsets.all(padding_m),
-          width: screenWidth / 2,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(children: [
-                SvgPicture.asset(
-                  "assets/icons/star.svg",
-                  height: 20,
-                ),
-                SizedBox(
-                  width: 6,
-                ),
-                Text(
-                  "4.8",
-                  style: TextStyle(
-                    color: foundation_dark,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'SF Pro Display',
-                    fontStyle: FontStyle.normal,
-                    fontSize: font_xs,
+        Expanded(
+          child: Container(
+            padding: EdgeInsets.all(padding_m),
+            width: screenWidth / 2,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(children: [
+                  SvgPicture.asset(
+                    "assets/icons/star.svg",
+                    height: 20,
                   ),
-                ),
-                Text(
-                  "(73)",
-                  style: TextStyle(
-                    color: grey_text_color,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'SF Pro Display',
-                    fontStyle: FontStyle.normal,
-                    fontSize: font_xs,
+                  SizedBox(
+                    width: 6,
                   ),
-                )
-              ]),
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Flexible(
-                    child: Text(
-                      "Entire Bromo dfdfdfdfkjsbdfisdbf dfdfdfdfkjsbdfisdbf dfdfdfdfkjsbdfisdbf ",
+                  Text(
+                    "4.8",
+                    style: TextStyle(
+                      color: foundation_dark,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'SF Pro Display',
+                      fontStyle: FontStyle.normal,
+                      fontSize: font_xs,
+                    ),
+                  ),
+                  Text(
+                    "(73)",
+                    style: TextStyle(
+                      color: grey_text_color,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'SF Pro Display',
+                      fontStyle: FontStyle.normal,
+                      fontSize: font_xs,
+                    ),
+                  )
+                ]),
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Flexible(
+                      child: Text(
+                        "Entire Bromo dfdfdfdfkjsbdfisdbf dfdfdfdfkjsbdfisdbf dfdfdfdfkjsbdfisdbf ",
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        softWrap: true,
+                        style: TextStyle(
+                          color: foundation_dark,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: 'SF Pro Display',
+                          fontStyle: FontStyle.normal,
+                          fontSize: font_m,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Text(
+                      "Malang, Probolinggo ",
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      softWrap: true,
+                      softWrap: false,
                       style: TextStyle(
-                        color: foundation_dark,
+                        color: grey_text_color,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'SF Pro Display',
                         fontStyle: FontStyle.normal,
-                        fontSize: font_m,
+                        fontSize: font_s,
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 4,
-                  ),
-                  Text(
-                    "Malang, Probolinggo ",
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    softWrap: false,
-                    style: TextStyle(
-                      color: grey_text_color,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: 'SF Pro Display',
-                      fontStyle: FontStyle.normal,
-                      fontSize: font_s,
+                  ],
+                ),
+                Row(
+                  children: [
+                    SvgPicture.asset("assets/icons/home-hashtag.svg"),
+                    SizedBox(
+                      width: 6,
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  SvgPicture.asset("assets/icons/home-hashtag.svg"),
-                  SizedBox(
-                    width: 6,
-                  ),
-                  Text(
-                    "2 room",
-                    style: TextStyle(
-                      color: grey_text_color,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: 'SF Pro Display',
-                      fontStyle: FontStyle.normal,
-                      fontSize: font_s,
+                    Text(
+                      "2 room",
+                      style: TextStyle(
+                        color: grey_text_color,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'SF Pro Display',
+                        fontStyle: FontStyle.normal,
+                        fontSize: font_s,
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 12,
-                  ),
-                  SvgPicture.asset("assets/icons/home-hashtag.svg"),
-                  SizedBox(
-                    width: 6,
-                  ),
-                  Text(
-                    "673 m2",
-                    style: TextStyle(
-                      color: grey_text_color,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: 'SF Pro Display',
-                      fontStyle: FontStyle.normal,
-                      fontSize: font_s,
+                    SizedBox(
+                      width: 12,
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  RichText(
-                    text: TextSpan(
-                        text: "Rs. 526",
-                        style: TextStyle(
-                          color: foundation_dark,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'SF Pro Display',
-                          fontStyle: FontStyle.normal,
-                          fontSize: font_xm,
-                        ),
-                        children: [
-                          TextSpan(
-                              text: "/month",
-                              style: TextStyle(
-                                color: grey_text_color,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: 'SF Pro Display',
-                                fontStyle: FontStyle.normal,
-                                fontSize: font_m,
-                              ))
-                        ]),
-                  ),
-                  SvgPicture.asset("assets/icons/heart.svg"),
-                ],
-              ),
-            ],
+                    SvgPicture.asset("assets/icons/home-hashtag.svg"),
+                    SizedBox(
+                      width: 6,
+                    ),
+                    Text(
+                      "673 m2",
+                      style: TextStyle(
+                        color: grey_text_color,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'SF Pro Display',
+                        fontStyle: FontStyle.normal,
+                        fontSize: font_s,
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    RichText(
+                      text: TextSpan(
+                          text: "Rs. 526",
+                          style: TextStyle(
+                            color: foundation_dark,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'SF Pro Display',
+                            fontStyle: FontStyle.normal,
+                            fontSize: font_xm,
+                          ),
+                          children: [
+                            TextSpan(
+                                text: "/month",
+                                style: TextStyle(
+                                  color: grey_text_color,
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: 'SF Pro Display',
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: font_m,
+                                ))
+                          ]),
+                    ),
+                    SvgPicture.asset("assets/icons/heart.svg"),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ]),
