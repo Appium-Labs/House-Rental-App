@@ -39,67 +39,78 @@ class HomeScreenMiddleContainer extends StatelessWidget {
                   borderRadius: BorderRadius.circular(75),
                   border: Border.all(color: grey_border_color, width: 0.8)),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  InkWell(
-                    onTap: () {
-                      if (homePageController.homePageState.value != "RENT")
-                        homePageController.toggleState();
-                    },
-                    child: Container(
-                        decoration: BoxDecoration(
-                            gradient:
-                                homePageController.homePageState.value == "RENT"
-                                    ? buttonLinearGradient
-                                    : const LinearGradient(colors: [
-                                        Colors.transparent,
-                                        Colors.transparent
-                                      ]),
-                            borderRadius: BorderRadius.circular(75)),
-                        padding: EdgeInsets.symmetric(
-                            horizontal: padding_4xl, vertical: padding_xs),
-                        child: Text(
-                          "I need to rent",
-                          style: TextStyle(
-                              fontFamily: 'SF Pro Display',
-                              fontStyle: FontStyle.normal,
-                              color: homePageController.homePageState.value ==
-                                      "RENT"
-                                  ? foundation_white
-                                  : grey_text_color,
-                              fontSize: font_m,
-                              fontWeight: FontWeight.w500),
-                        )),
+                  Hero(
+                    tag: "x",
+                    child: InkWell(
+                      onTap: () {
+                        if (homePageController.homePageState.value != "RENT")
+                          homePageController.toggleState();
+                      },
+                      child: Container(
+                          alignment: Alignment.center,
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          decoration: BoxDecoration(
+                              gradient:
+                                  homePageController.homePageState.value ==
+                                          "RENT"
+                                      ? buttonLinearGradient
+                                      : const LinearGradient(colors: [
+                                          Colors.transparent,
+                                          Colors.transparent
+                                        ]),
+                              borderRadius: BorderRadius.circular(75)),
+                          padding: EdgeInsets.symmetric(vertical: padding_xs),
+                          child: Text(
+                            "I need to rent",
+                            style: TextStyle(
+                                fontFamily: 'SF Pro Display',
+                                fontStyle: FontStyle.normal,
+                                color: homePageController.homePageState.value ==
+                                        "RENT"
+                                    ? foundation_white
+                                    : grey_text_color,
+                                fontSize: font_m,
+                                fontWeight: FontWeight.w500),
+                          )),
+                    ),
                   ),
-                  InkWell(
-                    onTap: () {
-                      if (homePageController.homePageState.value != "BUY")
-                        homePageController.toggleState();
-                    },
-                    child: Container(
-                        decoration: BoxDecoration(
-                            gradient:
-                                homePageController.homePageState.value == "BUY"
-                                    ? buttonLinearGradient
-                                    : const LinearGradient(colors: [
-                                        Colors.transparent,
-                                        Colors.transparent
-                                      ]),
-                            borderRadius: BorderRadius.circular(75)),
-                        padding: EdgeInsets.symmetric(
-                            horizontal: padding_4xl, vertical: padding_xs),
-                        child: Text(
-                          "I need to buy",
-                          style: TextStyle(
-                              fontFamily: 'SF Pro Display',
-                              fontStyle: FontStyle.normal,
-                              color: homePageController.homePageState.value ==
-                                      "BUY"
-                                  ? foundation_white
-                                  : grey_text_color,
-                              fontSize: font_m,
-                              fontWeight: FontWeight.w500),
-                        )),
+                  Spacer(),
+                  Hero(
+                    tag: "x",
+                    child: InkWell(
+                      onTap: () {
+                        if (homePageController.homePageState.value != "BUY")
+                          homePageController.toggleState();
+                      },
+                      child: Container(
+                          alignment: Alignment.center,
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          decoration: BoxDecoration(
+                              gradient:
+                                  homePageController.homePageState.value ==
+                                          "BUY"
+                                      ? buttonLinearGradient
+                                      : const LinearGradient(colors: [
+                                          Colors.transparent,
+                                          Colors.transparent
+                                        ]),
+                              borderRadius: BorderRadius.circular(75)),
+                          padding: EdgeInsets.symmetric(vertical: padding_xs),
+                          child: Text(
+                            "I need to buy",
+                            style: TextStyle(
+                                fontFamily: 'SF Pro Display',
+                                fontStyle: FontStyle.normal,
+                                color: homePageController.homePageState.value ==
+                                        "BUY"
+                                    ? foundation_white
+                                    : grey_text_color,
+                                fontSize: font_m,
+                                fontWeight: FontWeight.w500),
+                          )),
+                    ),
                   ),
                 ],
               ),

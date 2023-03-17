@@ -15,16 +15,15 @@ class PropertyCard extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 10),
-      height: screenHeight / 4,
       width: screenWidth / 1.2,
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: <BoxShadow>[
           BoxShadow(
-            color: Color(0xff43434326),
-            offset: Offset(0.0, 15),
-            blurRadius: 40.0,
-          ),
+              color: Color(0xff43434326),
+              offset: Offset(2, 0),
+              blurRadius: 10.0,
+              spreadRadius: 1),
         ],
         borderRadius: BorderRadius.circular(10),
       ),
@@ -36,8 +35,8 @@ class PropertyCard extends StatelessWidget {
             width: screenWidth / 3,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage(
-                    "https://cdn.wallpapersafari.com/26/41/LxkWAM.jpg"),
+                image:
+                    NetworkImage("https://wallpapercave.com/wp/wp7047989.jpg"),
                 fit: BoxFit.cover,
               ),
             ),
