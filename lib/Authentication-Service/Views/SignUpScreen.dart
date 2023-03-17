@@ -7,6 +7,8 @@ import 'package:house_rental_app/Authentication-Service/Views/shared/GoogleButto
 import 'package:house_rental_app/Authentication-Service/Views/shared/Header.dart';
 import 'package:house_rental_app/Authentication-Service/Views/shared/Or.dart';
 import 'package:house_rental_app/Authentication-Service/Views/shared/TextFeildContainer.dart';
+import 'package:house_rental_app/Feature-HomePage/Views/HomeScreen.dart';
+import 'package:house_rental_app/MainScreen.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -31,7 +33,7 @@ class SignUpScreen extends StatelessWidget {
         child: Column(
           children: [
             const Header(
-                title: "Let’s explore together!",
+                title: "Let's explore together!",
                 subTitle:
                     "Create your Placoo account to explore your dream place to live across the whole world!"),
             TextFeildContainer(
@@ -60,6 +62,7 @@ class SignUpScreen extends StatelessWidget {
               height: 20,
             ),
             GestureDetector(
+              onTap: () => Get.to(MainScreen()),
               child: const ColoredButton(
                   text: "Create Account",
                   color: primaryBlue,
