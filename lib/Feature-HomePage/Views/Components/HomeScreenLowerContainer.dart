@@ -68,7 +68,7 @@ class HomeScreenLowerContainer extends StatelessWidget {
               height: 20,
             ),
             Container(
-              height: 190,
+              height: 200,
               child: ListView.builder(
                   clipBehavior: Clip.none,
                   shrinkWrap: true,

@@ -15,8 +15,8 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    Request(),
     Explore(),
+    Request(),
     Saved(),
     Profile(),
   ];
@@ -50,6 +50,7 @@ class _MainScreenState extends State<MainScreen> {
             activeIcon: SvgPicture.asset(
               color: primaryBlue,
               "assets/icons/signpost.svg",
+              // colorFilter: ColorFilter.mode(color, blendMode),
             ),
             icon: SvgPicture.asset("assets/icons/signpost.svg"),
             label: 'Explore',
