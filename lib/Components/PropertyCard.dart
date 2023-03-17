@@ -20,9 +20,9 @@ class PropertyCard extends StatelessWidget {
         color: Colors.white,
         boxShadow: <BoxShadow>[
           BoxShadow(
-              color: Color(0xff43434326),
-              offset: Offset(2, 0),
-              blurRadius: 10.0,
+              color: Color(0xff43434326).withOpacity(0.17),
+              offset: Offset(2, 5),
+              blurRadius: 30.0,
               spreadRadius: 1),
         ],
         borderRadius: BorderRadius.circular(10),
