@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:house_rental_app/Feature-HomePage/Views/HomeScreen.dart';
+import 'package:house_rental_app/Profile-Service/Views/ProfileScreen.dart';
 
-import '../../Constants.dart';
+import 'Constants.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -18,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
     Request(),
     Explore(),
     Saved(),
-    Profile(),
+    ProfileScreen()
   ];
 
   void _onItemTapped(int index) {
@@ -73,7 +74,7 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             activeIcon: SvgPicture.asset(
               "assets/icons/Profile.svg",
-              color: primaryBlue,
+              colorFilter: ColorFilter.mode(primaryBlue, BlendMode.srcIn),
             ),
             icon: SvgPicture.asset(
               "assets/icons/Profile.svg",
