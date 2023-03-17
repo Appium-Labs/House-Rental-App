@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:house_rental_app/Constants.dart';
-import 'package:house_rental_app/Profile-Service/Views/shared/ProfileHeader.dart';
 
-class ProfileDetailScrenn extends StatelessWidget {
-  const ProfileDetailScrenn({super.key});
+import '../../Constants.dart';
+import '../../Profile-Service/Views/shared/ProfileHeader.dart';
+
+class RequestDetailScreen extends StatelessWidget {
+  const RequestDetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +54,37 @@ class ProfileDetailScrenn extends StatelessWidget {
                 ],
               ),
             ),
+            Container(
+              margin: EdgeInsets.all(25),
+              child: Row(children: [
+                Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                      gradient: primaryGradient,
+                      borderRadius: BorderRadius.circular(30)),
+                  child: const Text(
+                    "Accept",
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Spacer(),
+                Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                      border: Border.all(width: 1, color: primaryBlue),
+                      borderRadius: BorderRadius.circular(30)),
+                  child: const Text(
+                    "Reject",
+                    style: TextStyle(fontWeight: FontWeight.w500),
+                  ),
+                ),
+              ]),
+            )
           ],
         ),
       ),
