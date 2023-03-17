@@ -10,6 +10,10 @@ class ProfileDetailScrenn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text(
+          "Profile Details",
+          style: TextStyle(color: Colors.black),
+        ),
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
@@ -22,9 +26,7 @@ class ProfileDetailScrenn extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            ProfileHeader(
-              margin: 0,
-            ),
+            ProfileHeader(),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
               height: 1,

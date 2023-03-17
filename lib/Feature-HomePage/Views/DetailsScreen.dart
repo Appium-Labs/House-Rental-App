@@ -50,7 +50,8 @@ class DetailsScreen extends StatelessWidget {
                                 items: [
                                   Image(
                                     image: NetworkImage(
-                                        "https://wallpapercave.com/wp/wp7047989.jpg"),
+                                      "https://wallpapercave.com/wp/wp7047989.jpg",
+                                    ),
                                   ),
                                   Image(
                                     image: NetworkImage(

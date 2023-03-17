@@ -17,16 +17,28 @@ class RequestScreen extends StatelessWidget {
       "Alex Dumphy"
     ];
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        title: const Text(
+          "Requests",
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
       body: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(
-              height: 70,
-            ),
+            // const SizedBox(
+            //   height: 70,
+            // ),
             Container(
                 margin: const EdgeInsets.symmetric(horizontal: 18),
                 child: Search()),
+            SizedBox(
+              height: 30,
+            ),
             Expanded(
                 child: ListView.builder(
                     itemCount: names.length,

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ProfileHeader extends StatelessWidget {
-  final double margin;
-  const ProfileHeader({super.key, required this.margin});
+  const ProfileHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: margin, bottom: 30),
+      margin: EdgeInsets.only(bottom: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
