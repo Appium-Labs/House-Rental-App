@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:house_rental_app/HomePage-Service/Views/PlaceRequestScreen.dart';
 
 import '../../../Constants.dart';
 
@@ -52,21 +55,26 @@ class DetailsScreenBottomBar extends StatelessWidget {
             )
           ],
         ),
-        Container(
-          alignment: Alignment.center,
-          height: 50,
-          width: MediaQuery.of(context).size.width / 3,
-          decoration: BoxDecoration(
-              gradient: buttonLinearGradient,
-              borderRadius: BorderRadius.circular(72)),
-          child: Text(
-            "Rent",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w500,
-              fontFamily: 'SF Pro Display',
-              fontStyle: FontStyle.normal,
-              fontSize: font_m,
+        GestureDetector(
+          onTap: () {
+            Get.to(PlacerequestScreen());
+          },
+          child: Container(
+            alignment: Alignment.center,
+            height: 50,
+            width: MediaQuery.of(context).size.width / 3,
+            decoration: BoxDecoration(
+                gradient: buttonLinearGradient,
+                borderRadius: BorderRadius.circular(72)),
+            child: Text(
+              "Rent",
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+                fontFamily: 'SF Pro Display',
+                fontStyle: FontStyle.normal,
+                fontSize: font_m,
+              ),
             ),
           ),
         ),

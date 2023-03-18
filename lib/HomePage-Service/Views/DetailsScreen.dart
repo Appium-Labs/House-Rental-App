@@ -5,9 +5,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:house_rental_app/Constants.dart';
-import 'package:house_rental_app/Feature-HomePage/Views/Components/DetailsScreenOwnerDetails.dart';
-import 'package:house_rental_app/Feature-HomePage/Views/Components/DetailsScreenReviews.dart';
-import 'package:house_rental_app/Feature-HomePage/Views/Components/DetailsScreenUpper.dart';
+import 'package:house_rental_app/HomePage-Service/Views/Components/DetailsScreenOwnerDetails.dart';
+import 'package:house_rental_app/HomePage-Service/Views/Components/DetailsScreenReviews.dart';
+import 'package:house_rental_app/HomePage-Service/Views/Components/DetailsScreenUpper.dart';
 
 import 'Components/DetailsScreenAboutProperty.dart';
 import 'Components/DetailsScreenBottomBar.dart';

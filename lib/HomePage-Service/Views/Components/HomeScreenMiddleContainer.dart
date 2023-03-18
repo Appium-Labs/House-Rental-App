@@ -5,7 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:house_rental_app/Constants.dart';
 import 'package:get/get.dart';
-import 'package:house_rental_app/Feature-HomePage/Controllers/HomePageController.dart';
+import 'package:house_rental_app/HomePage-Service/Controllers/HomePageController.dart';
 
 class HomeScreenMiddleContainer extends StatelessWidget {
   HomePageController homePageController = Get.put(HomePageController());
