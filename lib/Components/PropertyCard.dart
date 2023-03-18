@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:house_rental_app/Feature-HomePage/Views/DetailsScreen.dart';
+import 'package:house_rental_app/HomePage-Service/Views/DetailsScreen.dart';
 
 import '../Constants.dart';
 

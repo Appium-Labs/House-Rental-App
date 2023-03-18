@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:house_rental_app/Feature-HomePage/Views/Components/HomeScreenLowerContainer.dart';
-import 'package:house_rental_app/Feature-HomePage/Views/Components/HomeScreenMiddleContainer.dart';
+import 'package:house_rental_app/HomePage-Service/Views/Components/HomeScreenLowerContainer.dart';
+import 'package:house_rental_app/HomePage-Service/Views/Components/HomeScreenMiddleContainer.dart';
 
 import 'Components/HomeScreenLowerBottomContainer.dart';
 import 'Components/HomeScreenUpperContainer.dart';
