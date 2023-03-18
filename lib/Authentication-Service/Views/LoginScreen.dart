@@ -7,7 +7,7 @@ import 'package:house_rental_app/Authentication-Service/Views/shared/GoogleButto
 import 'package:house_rental_app/Authentication-Service/Views/shared/Header.dart';
 import 'package:house_rental_app/Authentication-Service/Views/shared/Or.dart';
 import 'package:house_rental_app/Authentication-Service/Views/shared/TextFeildContainer.dart';
-import 'package:house_rental_app/Feature-HomePage/Views/HomeScreen.dart';
+import 'package:house_rental_app/HomePage-Service/Views/HomeScreen.dart';
 import 'package:house_rental_app/MainScreen.dart';
 
 class LoginScreen extends StatelessWidget {
