@@ -130,7 +130,7 @@ class DetailsScreen extends StatelessWidget {
                       onPressed: () {
                         Get.back();
                       },
-                      icon: Icon(Icons.arrow_back_ios),
+                      icon: const Icon(Icons.arrow_back_ios),
                     ),
                   )),
             ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:house_rental_app/Explore-Service/Views/ExploreScreen.dart';
 import 'package:house_rental_app/Saved-Service/VIews/SavedScreen.dart';
 import 'package:house_rental_app/Feature-HomePage/Views/HomeScreen.dart';
 import 'package:house_rental_app/Profile-Service/Views/ProfileScreen.dart';
@@ -18,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    Explore(),
+    ExploreScreen(),
     RequestScreen(),
     SavedScreen(),
     ProfileScreen()
