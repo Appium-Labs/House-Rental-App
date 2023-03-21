@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:house_rental_app/Constants.dart';
 import 'package:house_rental_app/Explore-Service/Views/shared/AddRemoveButton.dart';
+import 'package:house_rental_app/Explore-Service/Views/shared/BuyRentTab.dart';
 import 'package:house_rental_app/Explore-Service/Views/shared/FilterButton.dart';
 import 'package:house_rental_app/Explore-Service/Views/shared/FilterHeading.dart';
 import 'package:house_rental_app/Explore-Service/Views/shared/Search.dart';
@@ -52,6 +53,7 @@ class FilterScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          BuyRentTab(),
           FilterHeading(text: "How long do you want to stay?"),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),

@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:house_rental_app/Profile-Service/Views/EditDetailsScreen.dart';
 import 'package:house_rental_app/Profile-Service/Views/ProfileDetailScreen.dart';
+import 'package:house_rental_app/Profile-Service/Views/PurchaseHistory.dart';
 import 'package:house_rental_app/Profile-Service/Views/shared/Option.dart';
 
 class ProfileOptions extends StatelessWidget {
@@ -24,6 +25,9 @@ class ProfileOptions extends StatelessWidget {
               onTap: () => Get.to(EditDetailsScreen()),
               child: Option(text: "Edit Details", icon: Icon(Icons.edit))),
           InkWell(child: Option(text: "Log-Out", icon: Icon(Icons.logout))),
+          InkWell(
+              onTap: () => Get.to(PurchaseHistory()),
+              child: Option(text: "Purchase History", icon: Icon(Icons.paid))),
           InkWell(
             child: Option(
                 text: "Switch to hosting",
