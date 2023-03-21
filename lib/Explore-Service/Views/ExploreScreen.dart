@@ -15,19 +15,29 @@ class ExploreScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
+        leading: Icon(
+          Icons.arrow_back_ios_new,
+          color: Colors.black,
+        ),
         title: Row(
           children: [
             Search(),
+            const SizedBox(
+              width: 1,
+            ),
             InkWell(
               onTap: () => Get.to(FilterScreen()),
-              child: Container(
-                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 4),
-                padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  color: Colors.grey[200],
-                  borderRadius: BorderRadius.circular(20),
+              child: Hero(
+                tag: "filter-button",
+                child: Container(
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 14),
+                  padding: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: SvgPicture.asset("assets/icons/Fliter.svg"),
                 ),
-                child: SvgPicture.asset("assets/icons/Fliter.svg"),
               ),
             )
           ],
