@@ -8,12 +8,21 @@ class SavedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text(
+          "Saved",
+          style: TextStyle(color: Colors.black),
+        ),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+      ),
       body: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(
-            height: 70,
+            height: 10,
           ),
           Container(
               margin: const EdgeInsets.symmetric(horizontal: 18),
@@ -27,7 +36,7 @@ class SavedScreen extends StatelessWidget {
                         child: Container(
                             height: 180,
                             margin: EdgeInsets.only(
-                                left: 10, bottom: 30, right: 10),
+                                top: 30, left: 10, bottom: 10, right: 10),
                             child: PropertyCard()));
                   }))
         ],

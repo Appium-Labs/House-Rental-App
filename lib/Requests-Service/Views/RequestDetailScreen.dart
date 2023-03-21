@@ -27,9 +27,7 @@ class RequestDetailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            ProfileHeader(
-              margin: 0,
-            ),
+            ProfileHeader(),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
               height: 1,
