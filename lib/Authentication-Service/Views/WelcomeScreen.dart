@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
+import 'package:house_rental_app/Authentication-Service/Controllers/AuthenticationController.dart';
 import 'package:house_rental_app/Authentication-Service/Views/LoginScreen.dart';
 import 'package:house_rental_app/Authentication-Service/Views/SignUpScreen.dart';
 import 'package:house_rental_app/Authentication-Service/Views/shared/ColoredButton.dart';
@@ -10,6 +12,8 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(AuthenticationController());
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(

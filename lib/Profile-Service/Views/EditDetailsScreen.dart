@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:house_rental_app/Authentication-Service/Views/shared/TextFeildContainer.dart';
 import 'package:house_rental_app/Constants.dart';
 
@@ -47,20 +48,24 @@ class EditDetailsScreen extends StatelessWidget {
             ]),
           ),
           TextFeildContainer(
+              obscureText: false,
               controller: phoneController,
               text: "Phone",
               icon: const Icon(Icons.add_circle_outlined)),
           TextFeildContainer(
+              obscureText: false,
               controller: ageController,
               text: "Age",
               icon: const Icon(Icons.add_circle_outlined)),
           TextFeildContainer(
+              obscureText: false,
               controller: genderController,
               text: "Gender",
               icon: const Icon(
                 Icons.add_circle_outlined,
               )),
           TextFeildContainer(
+              obscureText: false,
               controller: marriedController,
               text: "Marital status",
               icon: const Icon(Icons.add_circle_outlined)),

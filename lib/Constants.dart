@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+// -------------------------------  API ROUTES -------------------------------------------------//
+
+const BASE_URL = "https://house-rental-backend.vercel.app";
+const SIGNUP_REQUEST = "/api/users";
+const LOGIN_REQUEST = "/api/users/login";
+
 //----------------------------------COLORS/GRADIENT--------------------------------------------//
 
 Gradient buttonLinearGradient = const LinearGradient(

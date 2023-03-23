@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -8,11 +7,13 @@ class TextFeildContainer extends StatelessWidget {
   final TextEditingController controller;
   final String text;
   final Widget icon;
+  final bool obscureText;
   const TextFeildContainer(
       {super.key,
       required this.controller,
       required this.text,
-      required this.icon});
+      required this.icon,
+      required this.obscureText});
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +34,7 @@ class TextFeildContainer extends StatelessWidget {
               print(text + " " + value);
             },
             controller: controller,
+            obscureText: obscureText,
             decoration: InputDecoration(
               fillColor: secondaryblue,
               border:
