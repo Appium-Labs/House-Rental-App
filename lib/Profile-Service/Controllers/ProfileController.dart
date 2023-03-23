@@ -48,6 +48,7 @@ class ProfileController extends GetxController {
     user.value = currUser;
     // print(jsonDecode(response.body));
     // print(currUser.name);
+
     isLoading.value = false;
   }
 
