@@ -33,6 +33,13 @@ class ProfileController extends GetxController {
     getUser();
   }
 
+  @override
+  void onReady() {
+    // TODO: implement onReady
+    super.onReady();
+    getUser();
+  }
+
   void getUser() async {
     isLoading.value = true;
     var userId = prefs.read("user_id");
