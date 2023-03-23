@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:house_rental_app/Constants.dart';
+import 'package:house_rental_app/Profile-Service/Controllers/ProfileController.dart';
 import 'package:house_rental_app/Profile-Service/Views/shared/ProfileHeader.dart';
 
 class ProfileDetailScrenn extends StatelessWidget {
@@ -8,6 +9,7 @@ class ProfileDetailScrenn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ProfileController controller = Get.find();
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -24,38 +26,46 @@ class ProfileDetailScrenn extends StatelessWidget {
             )),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            ProfileHeader(),
-            Container(
-              margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-              height: 1,
-              color: Colors.black.withOpacity(0.1),
-            ),
-            Container(
-              margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
-              child: Column(
-                children: [
-                  ProfileDetailTextContainer(
-                    first: "Phone",
-                    second: "9560775711",
-                  ),
-                  ProfileDetailTextContainer(
-                    first: "Age",
-                    second: "25",
-                  ),
-                  ProfileDetailTextContainer(
-                    first: "Gender",
-                    second: "Female",
-                  ),
-                  ProfileDetailTextContainer(
-                    first: "Marital status",
-                    second: "Not Married",
-                  ),
-                ],
+        child: Obx(
+          () => Column(
+            children: [
+              ProfileHeader(
+                  name: controller.user.value.name.toString(),
+                  email: controller.user.value.email.toString()),
+              Container(
+                margin:
+                    const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                height: 1,
+                color: Colors.black.withOpacity(0.1),
               ),
-            ),
-          ],
+              Container(
+                margin:
+                    const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+                child: Column(
+                  children: [
+                    ProfileDetailTextContainer(
+                      first: "Phone",
+                      second: controller.user.value.phone.toString(),
+                    ),
+                    ProfileDetailTextContainer(
+                      first: "Age",
+                      second: controller.user.value.age.toString(),
+                    ),
+                    ProfileDetailTextContainer(
+                      first: "Gender",
+                      second: controller.user.value.gender.toString(),
+                    ),
+                    ProfileDetailTextContainer(
+                      first: "Marital status",
+                      second: controller.user.value.maritalStatus == true
+                          ? "Married"
+                          : "Not Married",
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
