@@ -94,7 +94,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                       const Or(),
-                      GestureDetector(child: const GoogleButton())
+                      GestureDetector(onTap: () {}, child: const GoogleButton())
                     ],
                   ),
                 ),

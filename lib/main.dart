@@ -19,11 +19,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final prefs = GetStorage();
+    var userId = prefs.read("user_id");
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(),
-      home: const WelcomeScreen(),
+      home: userId != null ? MainScreen() : WelcomeScreen(),
     );
   }
 }

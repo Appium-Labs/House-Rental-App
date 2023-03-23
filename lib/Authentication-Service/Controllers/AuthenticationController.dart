@@ -55,6 +55,7 @@ class AuthenticationController extends GetxController {
     isLoading.value = false;
     if (response.statusCode == 201) {
       String userId = jsonDecode(response.body)["user_id"];
+      prefs.write("user_id", userId);
       print(userId);
       return true;
     } else {
