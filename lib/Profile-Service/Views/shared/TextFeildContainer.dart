@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../../Constants.dart';
 
@@ -31,6 +32,10 @@ class TextFeildContainer extends StatelessWidget {
               print(text + " " + value);
             },
             controller: controller,
+            keyboardType: TextInputType.number,
+            inputFormatters: <TextInputFormatter>[
+              FilteringTextInputFormatter.digitsOnly
+            ],
             decoration: InputDecoration(
               fillColor: secondaryblue,
               border:

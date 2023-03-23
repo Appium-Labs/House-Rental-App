@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
-import 'package:house_rental_app/Authentication-Service/Views/shared/TextFeildContainer.dart';
 import 'package:house_rental_app/Constants.dart';
 import 'package:house_rental_app/Profile-Service/Controllers/ProfileController.dart';
+import 'package:house_rental_app/Profile-Service/Views/shared/TextFeildContainer.dart';
 
 class EditDetailsScreen extends StatelessWidget {
   const EditDetailsScreen({super.key});
@@ -87,7 +87,6 @@ class EditDetailsScreen extends StatelessWidget {
                     ),
                   )
                 : TextFeildContainer(
-                    obscureText: false,
                     controller: phoneController,
                     text: "Phone",
                     icon: const Icon(Icons.add_circle_outlined)),
@@ -127,7 +126,6 @@ class EditDetailsScreen extends StatelessWidget {
                     ),
                   )
                 : TextFeildContainer(
-                    obscureText: false,
                     controller: ageController,
                     text: "Age",
                     icon: const Icon(Icons.add_circle_outlined)),
@@ -184,10 +182,25 @@ class EditDetailsScreen extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () async {
-              controller.editUserDetails(
-                  int.parse(phoneController.text.toString()),
-                  int.parse(ageController.text.toString()));
-              Get.back();
+              if ((controller.phoneTapped.value &&
+                      phoneController.text.toString().isEmpty) ||
+                  (controller.ageTapped.value &&
+                      ageController.text.toString().isEmpty)) {
+                Get.snackbar("Imvalid", "Enter proper details");
+              } else {
+                if (phoneController.text.toString().isEmpty) {
+                  phoneController.text = controller.user.value.phone.toString();
+                }
+                if (ageController.text.toString().isEmpty) {
+                  ageController.text = controller.user.value.age.toString();
+                }
+                controller.editUserDetails(
+                    int.parse(phoneController.text.toString()),
+                    int.parse(ageController.text.toString()));
+                controller.ageTap(false);
+                controller.phoneTap(false);
+                Get.back();
+              }
             },
             child: Container(
               alignment: Alignment.center,
