@@ -1,7 +1,9 @@
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:house_rental_app/Constants.dart';
+import 'package:house_rental_app/HomePage-Service/Controllers/HomePageController.dart';
 
 import '../../../Components/PropertyCard.dart';
 
@@ -10,6 +12,7 @@ class HomeScreenLowerBottomContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    HomePageController controller = Get.find();
     return Padding(
       padding: EdgeInsets.symmetric(vertical: padding_xm),
       child: Container(
@@ -51,17 +54,19 @@ class HomeScreenLowerBottomContainer extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            Container(
-              height: 200,
-              child: ListView.builder(
-                  clipBehavior: Clip.none,
-                  shrinkWrap: true,
-                  physics: const AlwaysScrollableScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 50,
-                  itemBuilder: (ctx, idx) {
-                    return PropertyCard();
-                  }),
+            Obx(
+              () => Container(
+                height: 200,
+                child: ListView.builder(
+                    clipBehavior: Clip.none,
+                    shrinkWrap: true,
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: controller.topRatedProperties.value.length,
+                    itemBuilder: (ctx, idx) {
+                      return PropertyCard();
+                    }),
+              ),
             ),
           ],
         ),
