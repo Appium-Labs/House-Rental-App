@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 const BASE_URL = "https://house-rental-backend.vercel.app";
 const SIGNUP_REQUEST = "/api/users";
 const LOGIN_REQUEST = "/api/users/login";
+const GET_ALL_PROPERTIES_REQUEST = "/api/properties";
+const GET_PROPERTIES_NEAR_YOU_REQUEST = "/api/properties/getPropertyByLocation";
+const GET_TOP_RATED_PROPERTIES = "/api/properties/getTopRatedProperties";
 
 //----------------------------------COLORS/GRADIENT--------------------------------------------//
 
