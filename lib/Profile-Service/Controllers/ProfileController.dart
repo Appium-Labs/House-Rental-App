@@ -1,12 +1,17 @@
 import 'dart:convert';
+import 'dart:typed_data';
 
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:house_rental_app/Profile-Service/Models/UserModel.dart';
 import 'package:http/http.dart' as http;
+import 'package:image_picker/image_picker.dart';
 import '../../Constants.dart';
 
 class ProfileController extends GetxController {
+  Rx<ImagePicker> imagePicker = ImagePicker().obs;
+  RxString imagePath = "".obs;
+
   final prefs = GetStorage();
   RxBool isLoading = false.obs;
   var user = UserModel().obs;
@@ -53,9 +58,6 @@ class ProfileController extends GetxController {
     );
     UserModel currUser = UserModel.fromJson(jsonDecode(response.body)["user"]);
     user.value = currUser;
-    // print(jsonDecode(response.body));
-    // print(currUser.name);
-
     isLoading.value = false;
   }
 
@@ -79,5 +81,26 @@ class ProfileController extends GetxController {
     print(jsonDecode(response.body)["data"]);
     getUser();
     isLoading.value = false;
+  }
+
+  openImage() async {
+    try {
+      var pickedFile =
+          await imagePicker.value.pickImage(source: ImageSource.gallery);
+      if (pickedFile != null) {
+        imagePath.value = pickedFile.path;
+        print(imagePath);
+        XFile file = XFile(imagePath.value.toString());
+
+        return 1;
+      } else {
+        print("no image selected");
+        return -1;
+      }
+    } catch (e) {
+      print("error in image file");
+      print(e);
+      return -1;
+    }
   }
 }

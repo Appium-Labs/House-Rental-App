@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:house_rental_app/Constants.dart';
 import 'package:house_rental_app/Profile-Service/Controllers/ProfileController.dart';
 import 'package:house_rental_app/Profile-Service/Views/shared/TextFeildContainer.dart';
@@ -42,9 +41,13 @@ class EditDetailsScreen extends StatelessWidget {
             margin: const EdgeInsets.all(15),
             alignment: Alignment.center,
             child: Column(children: [
-              CircleAvatar(
-                radius: 50,
-                foregroundImage: AssetImage("assets/images/DefaultProfile.png"),
+              GestureDetector(
+                onTap: () => controller.openImage(),
+                child: CircleAvatar(
+                  radius: 50,
+                  foregroundImage:
+                      AssetImage("assets/images/DefaultProfile.png"),
+                ),
               ),
               const SizedBox(
                 height: 15,
