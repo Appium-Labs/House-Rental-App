@@ -85,7 +85,9 @@ class ExploreScreen extends StatelessWidget {
                           height: 190,
                           margin: const EdgeInsets.symmetric(
                               vertical: 16, horizontal: 10),
-                          child: PropertyCard());
+                          child:
+                              // PropertyCard()
+                              Container());
                 }),
           ),
         ],

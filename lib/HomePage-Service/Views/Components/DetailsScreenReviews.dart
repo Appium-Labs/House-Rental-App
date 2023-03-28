@@ -3,13 +3,17 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:house_rental_app/Constants.dart';
+import 'package:house_rental_app/HomePage-Service/Controllers/PropertyController.dart';
+import 'package:house_rental_app/HomePage-Service/Models/Properties.dart';
 
 class DetailsScreenReviews extends StatelessWidget {
   const DetailsScreenReviews({super.key});
 
   @override
   Widget build(BuildContext context) {
+    PropertyController propertyController = Get.find();
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: padding_m, vertical: padding_s),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -28,11 +32,12 @@ class DetailsScreenReviews extends StatelessWidget {
         ),
         ListView.builder(
             padding: EdgeInsets.all(0),
-            itemCount: 5,
+            itemCount: propertyController.property.value.reviews!.length,
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
             itemBuilder: (ctx, idx) {
-              return ReviewCard();
+              return ReviewCard(
+                  review: propertyController.property.value.reviews![idx]);
             })
       ]),
     );
@@ -40,7 +45,8 @@ class DetailsScreenReviews extends StatelessWidget {
 }
 
 class ReviewCard extends StatelessWidget {
-  const ReviewCard({super.key});
+  Reviews review;
+  ReviewCard({required this.review});
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +60,7 @@ class ReviewCard extends StatelessWidget {
                 contentPadding: EdgeInsets.all(0),
                 leading: SvgPicture.asset("assets/icons/profile-temp.svg"),
                 title: Text(
-                  'Sans Jose',
+                  review.userId!.name!,
                   style: TextStyle(
                     color: foundation_dark,
                     fontWeight: FontWeight.w400,
@@ -68,7 +74,7 @@ class ReviewCard extends StatelessWidget {
                     child: SvgPicture.asset("assets/icons/stars.svg")),
               ),
               Text(
-                "My wife and I had a dream of downsizing from our house in Cape Elizabeth into a small condo closer to where we work and play in Portland. David and his skilled team helped make that dream a reality. The sale went smoothly, and we just closed on an ideal new place we're excited to call home.",
+                review.review!,
                 style: TextStyle(
                   color: grey_text_color,
                   fontWeight: FontWeight.w400,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:house_rental_app/HomePage-Service/Controllers/HomePageController.dart';
 
 import 'package:house_rental_app/HomePage-Service/Views/Components/HomeScreenLowerContainer.dart';
 import 'package:house_rental_app/HomePage-Service/Views/Components/HomeScreenMiddleContainer.dart';
@@ -11,6 +13,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    HomePageController homePageController = Get.put(HomePageController());
     return Scaffold(
         body: SingleChildScrollView(
       child: Column(

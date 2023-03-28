@@ -153,7 +153,7 @@ class Reviews {
   String? review;
   int? stars;
   String? propertyId;
-  String? userId;
+  UserId? userId;
   int? iV;
 
   Reviews(
@@ -169,7 +169,8 @@ class Reviews {
     review = json['review'];
     stars = json['stars'];
     propertyId = json['property_id'];
-    userId = json['user_id'];
+    userId =
+        json['user_id'] != null ? new UserId.fromJson(json['user_id']) : null;
     iV = json['__v'];
   }
 
@@ -179,8 +180,93 @@ class Reviews {
     data['review'] = this.review;
     data['stars'] = this.stars;
     data['property_id'] = this.propertyId;
-    data['user_id'] = this.userId;
+    if (this.userId != null) {
+      data['user_id'] = this.userId?.toJson();
+    }
     data['__v'] = this.iV;
+    return data;
+  }
+}
+
+class UserId {
+  Photos? photos;
+  String? sId;
+  String? name;
+  String? email;
+  String? password;
+  List<String>? saved;
+  List<String>? purchaseHistory;
+  List<String>? hostedProperties;
+  List<String>? requests;
+  int? iV;
+  int? age;
+  String? gender;
+  bool? isHost;
+  bool? maritalStatus;
+  int? phone;
+
+  UserId(
+      {this.photos,
+      this.sId,
+      this.name,
+      this.email,
+      this.password,
+      this.saved,
+      this.purchaseHistory,
+      this.hostedProperties,
+      this.requests,
+      this.iV,
+      this.age,
+      this.gender,
+      this.isHost,
+      this.maritalStatus,
+      this.phone});
+
+  UserId.fromJson(Map<String, dynamic> json) {
+    photos = json['photo'] != null ? new Photos.fromJson(json['photo']) : null;
+    sId = json['_id'];
+    name = json['name'];
+    email = json['email'];
+    password = json['password'];
+    saved = json['saved'].cast<String>();
+    purchaseHistory = json['purchase_history'].cast<String>();
+    hostedProperties = json['hosted_properties'].cast<String>();
+    // if (json['hosted_properties'] != null) {
+    //   hostedProperties = <String>[];
+    //   json['hosted_properties'].forEach((v) {
+    //     hostedProperties?.add(v);
+    //   });
+    // }
+    requests = json['requests'].cast<String>();
+    iV = json['__v'];
+    age = json['age'];
+    gender = json['gender'];
+    isHost = json['is_host'];
+    maritalStatus = json['marital_status'];
+    phone = json['phone'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    if (this.photos != null) {
+      data['photo'] = this.photos?.toJson();
+    }
+    data['_id'] = this.sId;
+    data['name'] = this.name;
+    data['email'] = this.email;
+    data['password'] = this.password;
+    data['saved'] = this.saved;
+    data['purchase_history'] = this.purchaseHistory;
+    if (this.hostedProperties != null) {
+      data['hosted_properties'] = this.hostedProperties?.map((v) => v).toList();
+    }
+    data['requests'] = this.requests;
+    data['__v'] = this.iV;
+    data['age'] = this.age;
+    data['gender'] = this.gender;
+    data['is_host'] = this.isHost;
+    data['marital_status'] = this.maritalStatus;
+    data['phone'] = this.phone;
     return data;
   }
 }

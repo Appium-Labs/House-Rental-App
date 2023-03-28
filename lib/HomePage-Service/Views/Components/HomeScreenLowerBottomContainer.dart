@@ -8,7 +8,7 @@ import 'package:house_rental_app/HomePage-Service/Controllers/HomePageController
 import '../../../Components/PropertyCard.dart';
 
 class HomeScreenLowerBottomContainer extends StatelessWidget {
-  const HomeScreenLowerBottomContainer({super.key});
+  HomeScreenLowerBottomContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +64,9 @@ class HomeScreenLowerBottomContainer extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemCount: controller.topRatedProperties.value.length,
                     itemBuilder: (ctx, idx) {
-                      return PropertyCard();
+                      return PropertyCard(
+                        property: controller.topRatedProperties[idx],
+                      );
                     }),
               ),
             ),

@@ -3,13 +3,16 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:house_rental_app/Constants.dart';
+import 'package:house_rental_app/HomePage-Service/Controllers/PropertyController.dart';
 
 class DetailScreenUpper extends StatelessWidget {
   const DetailScreenUpper({super.key});
 
   @override
   Widget build(BuildContext context) {
+    PropertyController propertyController = Get.find();
     return Padding(
       padding:
           EdgeInsets.symmetric(horizontal: padding_m, vertical: padding_xxxs),
@@ -22,7 +25,7 @@ class DetailScreenUpper extends StatelessWidget {
               Flexible(
                   flex: 3,
                   child: Text(
-                    "Entire Bromo mountain view Cabin in Surabaya",
+                    propertyController.property.value.title!,
                     maxLines: 2,
                     style: TextStyle(
                         color: foundation_dark,
@@ -64,7 +67,8 @@ class DetailScreenUpper extends StatelessWidget {
                     ),
                     RichText(
                       text: TextSpan(
-                          text: "4.3",
+                          text: propertyController.property.value.rating!
+                              .toString(),
                           style: TextStyle(
                               fontFamily: "SF Pro Display",
                               fontStyle: FontStyle.normal,
@@ -73,7 +77,8 @@ class DetailScreenUpper extends StatelessWidget {
                               fontWeight: FontWeight.w400),
                           children: [
                             TextSpan(
-                              text: "(73)",
+                              text:
+                                  "(${propertyController.property.value.reviews!.length})",
                               style: TextStyle(
                                   fontFamily: "SF Pro Display",
                                   fontStyle: FontStyle.normal,
@@ -95,7 +100,7 @@ class DetailScreenUpper extends StatelessWidget {
                       width: 6,
                     ),
                     Text(
-                      "2 rooms",
+                      "${propertyController.property.value.bedrooms} rooms",
                       style: TextStyle(
                         color: grey_text_color,
                         fontWeight: FontWeight.w400,
@@ -116,7 +121,7 @@ class DetailScreenUpper extends StatelessWidget {
                       width: 6,
                     ),
                     Text(
-                      "Malang, Probolinggo",
+                      "${propertyController.property.value.city}, ${propertyController.property.value.country}",
                       style: TextStyle(
                         color: grey_text_color,
                         fontWeight: FontWeight.w400,
@@ -137,7 +142,7 @@ class DetailScreenUpper extends StatelessWidget {
                       width: 6,
                     ),
                     Text(
-                      "673 m2",
+                      "${propertyController.property.value.totalArea} m2",
                       style: TextStyle(
                         color: grey_text_color,
                         fontWeight: FontWeight.w400,

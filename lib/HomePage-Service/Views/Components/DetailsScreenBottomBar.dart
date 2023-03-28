@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:house_rental_app/HomePage-Service/Controllers/PropertyController.dart';
 import 'package:house_rental_app/HomePage-Service/Views/PlaceRequestScreen.dart';
 
 import '../../../Constants.dart';
@@ -12,6 +13,7 @@ class DetailsScreenBottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    PropertyController propertyController = Get.find();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
@@ -20,7 +22,8 @@ class DetailsScreenBottomBar extends StatelessWidget {
           children: [
             RichText(
                 text: TextSpan(
-                    text: "Rs. 2,700 ",
+                    text:
+                        "Rs. ${propertyController.property.value.totalPrice} ",
                     style: TextStyle(
                       color: foundation_dark,
                       fontWeight: FontWeight.w600,
