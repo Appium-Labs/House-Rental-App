@@ -4,20 +4,21 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:house_rental_app/HomePage-Service/Models/Properties.dart';
 import 'package:house_rental_app/HomePage-Service/Views/DetailsScreen.dart';
 
 import '../Constants.dart';
 
 class PropertyCard extends StatelessWidget {
-  const PropertyCard({super.key});
-
+  Properties property;
+  PropertyCard({required this.property});
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return InkWell(
       onTap: () {
-        Get.to(DetailsScreen());
+        Get.to(DetailsScreen(property: property));
       },
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 10),
@@ -42,8 +43,7 @@ class PropertyCard extends StatelessWidget {
               width: screenWidth / 3,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage(
-                      "https://wallpapercave.com/wp/wp7047989.jpg"),
+                  image: NetworkImage(property.photos![0].url!),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -66,7 +66,7 @@ class PropertyCard extends StatelessWidget {
                       width: 6,
                     ),
                     Text(
-                      "4.8",
+                      property.rating!.toString(),
                       style: TextStyle(
                         color: foundation_dark,
                         fontWeight: FontWeight.w400,
@@ -76,7 +76,7 @@ class PropertyCard extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "(73)",
+                      "(${property.reviews!.length})",
                       style: TextStyle(
                         color: grey_text_color,
                         fontWeight: FontWeight.w400,
@@ -92,7 +92,7 @@ class PropertyCard extends StatelessWidget {
                     children: [
                       Flexible(
                         child: Text(
-                          "Entire Bromo dfdfdfdfkjsbdfisdbf dfdfdfdfkjsbdfisdbf dfdfdfdfkjsbdfisdbf ",
+                          property.title!,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           softWrap: true,
@@ -109,7 +109,7 @@ class PropertyCard extends StatelessWidget {
                         height: 4,
                       ),
                       Text(
-                        "Malang, Probolinggo ",
+                        "${property.city}, ${property.country} ",
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         softWrap: false,
@@ -130,7 +130,7 @@ class PropertyCard extends StatelessWidget {
                         width: 6,
                       ),
                       Text(
-                        "2 room",
+                        "${property.bedrooms} room",
                         style: TextStyle(
                           color: grey_text_color,
                           fontWeight: FontWeight.w400,
@@ -147,7 +147,7 @@ class PropertyCard extends StatelessWidget {
                         width: 6,
                       ),
                       Text(
-                        "673 m2",
+                        "${property.totalArea} m2",
                         style: TextStyle(
                           color: grey_text_color,
                           fontWeight: FontWeight.w400,
@@ -163,7 +163,7 @@ class PropertyCard extends StatelessWidget {
                     children: [
                       RichText(
                         text: TextSpan(
-                            text: "Rs. 526",
+                            text: "Rs. ${property.totalPrice}",
                             style: TextStyle(
                               color: foundation_dark,
                               fontWeight: FontWeight.w600,

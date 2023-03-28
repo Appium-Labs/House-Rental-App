@@ -42,7 +42,8 @@ class PlacerequestScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(height: 190, child: PropertyCard()),
+              //Container to prop card
+              Container(height: 190, child: Container()),
               SizedBox(
                 height: 24,
               ),

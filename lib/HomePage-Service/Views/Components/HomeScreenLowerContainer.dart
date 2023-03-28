@@ -6,7 +6,7 @@ import 'package:house_rental_app/Constants.dart';
 import 'package:house_rental_app/HomePage-Service/Controllers/HomePageController.dart';
 
 class HomeScreenLowerContainer extends StatelessWidget {
-  const HomeScreenLowerContainer({super.key});
+  HomeScreenLowerContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +80,9 @@ class HomeScreenLowerContainer extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemCount: controller.nearYourLocation.value.length,
                     itemBuilder: (ctx, idx) {
-                      return PropertyCard();
+                      return PropertyCard(
+                        property: controller.nearYourLocation[idx],
+                      );
                     }),
               ),
             ),

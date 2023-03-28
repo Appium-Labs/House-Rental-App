@@ -3,47 +3,54 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:house_rental_app/Constants.dart';
+import 'package:house_rental_app/HomePage-Service/Controllers/PropertyController.dart';
 
 class DetailsScreenOwnerDetails extends StatelessWidget {
   const DetailsScreenOwnerDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
+    PropertyController propertyController = Get.find();
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: padding_m, vertical: padding_s),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(children: [
-            SvgPicture.asset("assets/icons/profile-temp.svg"),
-            SizedBox(
-              width: 6,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  "Louise Vuitton",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: font_m,
-                      fontFamily: 'SF Pro Display',
-                      fontStyle: FontStyle.normal,
-                      color: foundation_dark),
-                ),
-                Text(
-                  "Property owner",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: font_s,
-                      fontFamily: 'SF Pro Display',
-                      fontStyle: FontStyle.normal,
-                      color: grey_text_color),
-                )
-              ],
-            ),
-          ]),
+          Obx(
+            () => Row(children: [
+              SvgPicture.asset("assets/icons/profile-temp.svg"),
+              SizedBox(
+                width: 6,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    propertyController.owner.value.name == null
+                        ? ""
+                        : propertyController.owner.value.name!,
+                    style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: font_m,
+                        fontFamily: 'SF Pro Display',
+                        fontStyle: FontStyle.normal,
+                        color: foundation_dark),
+                  ),
+                  Text(
+                    "Property owner",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: font_s,
+                        fontFamily: 'SF Pro Display',
+                        fontStyle: FontStyle.normal,
+                        color: grey_text_color),
+                  )
+                ],
+              ),
+            ]),
+          ),
           Row(
             children: [
               Container(

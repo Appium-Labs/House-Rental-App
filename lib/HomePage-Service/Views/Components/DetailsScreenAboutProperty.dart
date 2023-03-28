@@ -2,14 +2,17 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 import '../../../Constants.dart';
+import '../../Controllers/PropertyController.dart';
 
 class DetailsScreenAboutProperty extends StatelessWidget {
   const DetailsScreenAboutProperty({super.key});
 
   @override
   Widget build(BuildContext context) {
+    PropertyController propertyController = Get.find();
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: padding_m, vertical: padding_s),
       child: Column(
@@ -28,7 +31,7 @@ class DetailsScreenAboutProperty extends StatelessWidget {
           ),
           ListView.builder(
               padding: EdgeInsets.symmetric(vertical: 20),
-              itemCount: 5,
+              itemCount: propertyController.property.value.facilities?.length,
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               itemBuilder: (ctx, idx) {
@@ -41,7 +44,7 @@ class DetailsScreenAboutProperty extends StatelessWidget {
                         width: 10,
                       ),
                       Text(
-                        "Home facilities",
+                        propertyController.property.value.facilities![idx],
                         style: TextStyle(
                           color: foundation_dark,
                           fontWeight: FontWeight.w400,
@@ -68,7 +71,7 @@ class DetailsScreenAboutProperty extends StatelessWidget {
             height: 20,
           ),
           Text(
-            "This cabin comes with Smart Home System and beautiful viking style. You can see sunrise in the morning with City View from full Glass Window.This unit is surrounded by business district of West Surabaya that offers you the city life as well as wide range of culinary.This apartment equipped with Washing Machine, Electric Stove, Microwave, Refrigerator, Cutlery.",
+            propertyController.property.value.neighbourhoodDetail!,
             style: TextStyle(
               color: grey_text_color,
               fontWeight: FontWeight.w400,
@@ -99,7 +102,7 @@ class DetailsScreenAboutProperty extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "500 Rs./month",
+                  "${propertyController.property.value.averageLivingCost} Rs./month",
                   style: TextStyle(
                     color: foundation_dark,
                     fontWeight: FontWeight.w600,

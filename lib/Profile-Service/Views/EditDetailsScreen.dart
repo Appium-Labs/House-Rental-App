@@ -184,7 +184,7 @@ class EditDetailsScreen extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: () async {
+            onTap: () {
               if ((controller.phoneTapped.value &&
                       phoneController.text.toString().isEmpty) ||
                   (controller.ageTapped.value &&

@@ -37,7 +37,9 @@ class SavedScreen extends StatelessWidget {
                             height: 180,
                             margin: EdgeInsets.only(
                                 top: 30, left: 10, bottom: 10, right: 10),
-                            child: PropertyCard()));
+                            child: Container()
+                            //todo Container to propertyCard
+                            ));
                   }))
         ],
       ),

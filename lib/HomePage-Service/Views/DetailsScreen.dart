@@ -5,6 +5,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:house_rental_app/Constants.dart';
+import 'package:house_rental_app/HomePage-Service/Controllers/PropertyController.dart';
+import 'package:house_rental_app/HomePage-Service/Models/Properties.dart';
 import 'package:house_rental_app/HomePage-Service/Views/Components/DetailsScreenOwnerDetails.dart';
 import 'package:house_rental_app/HomePage-Service/Views/Components/DetailsScreenReviews.dart';
 import 'package:house_rental_app/HomePage-Service/Views/Components/DetailsScreenUpper.dart';
@@ -13,10 +15,15 @@ import 'Components/DetailsScreenAboutProperty.dart';
 import 'Components/DetailsScreenBottomBar.dart';
 
 class DetailsScreen extends StatelessWidget {
-  const DetailsScreen({super.key});
+  Properties property;
+  DetailsScreen({required this.property});
 
   @override
   Widget build(BuildContext context) {
+    print(property.toJson());
+    PropertyController propertyController = Get.put(PropertyController());
+    propertyController.property.value = property;
+    propertyController.getPropertyOwner();
     return Scaffold(
       body: SingleChildScrollView(
         physics: ScrollPhysics(),
@@ -40,32 +47,28 @@ class DetailsScreen extends StatelessWidget {
                           alignment: Alignment.bottomRight,
                           children: [
                             CarouselSlider(
-                                // carouselController: cc,
-                                options: CarouselOptions(
-                                  enlargeCenterPage: true,
-                                  height:
-                                      MediaQuery.of(context).size.height / 3,
-                                  viewportFraction: 1,
-                                ),
-                                items: [
-                                  Image(
-                                    image: NetworkImage(
-                                      "https://wallpapercave.com/wp/wp7047989.jpg",
-                                    ),
-                                  ),
-                                  Image(
-                                    image: NetworkImage(
-                                        "https://wallpaperaccess.com/full/3060214.jpg"),
-                                  ),
-                                  Image(
-                                    image: NetworkImage(
-                                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&w=1000&q=80"),
-                                  ),
-                                  Image(
-                                    image: NetworkImage(
-                                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNbLtrIsOrWfoJ6467FwAXrEywldNcUAY7kQ&usqp=CAU"),
-                                  )
-                                ]),
+                              // carouselController: cc,
+                              options: CarouselOptions(
+                                enlargeCenterPage: true,
+                                height: MediaQuery.of(context).size.height / 3,
+                                viewportFraction: 1,
+                              ),
+                              items: propertyController.property.value.photos
+                                  ?.map((e) {
+                                return Builder(
+                                  builder: (BuildContext context) {
+                                    return Container(
+                                      child: Image.network(
+                                        e.url.toString(),
+                                        fit: BoxFit.contain,
+                                        // width:
+                                        //     MediaQuery.of(context).size.width / 2,
+                                      ),
+                                    );
+                                  },
+                                );
+                              }).toList(),
+                            ),
                             Positioned(
                               right: 20,
                               bottom: 20,
